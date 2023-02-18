@@ -147,12 +147,14 @@
 }
 
 .content .left-aside ul {
-    margin: 9px 0 9px 16px;
+    margin: 9px 0 9px 0px;
 }
 
 .content .left-aside ul li {
-    margin-bottom: 8px;
+    /* padding-bottom: 8px; */
     height: 20px;
+    padding: 4px 0 4px 16px;
+    line-height: 20px;
     font-size: 14px;
     color: #333;
 }
@@ -161,26 +163,64 @@
     margin-bottom: 0;
 }
 
-.content .left-aside ul li a {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-}
+/* .content .left-aside ul li a {
+
+} */
 
 /* .content .left-aside ul li dl{ */
 
 .second-menu {
     position: absolute;
-    /* display: none; */
-    left: 200px;
+    display: none;
+    left: 190px;
     top: 0px;
     padding-left: 20px;
     padding-top: 18px;
-
     width: 680px;
-    max-height: 458px;
+    min-height: 440px;
     background-color: #f4f4f4;
 }
+
+.second-menu dl {
+    margin-bottom: 16px;
+}
+
+.second-menu dl dt {
+    float: left;
+
+    width: 70px;
+    height: 20px;
+    margin-right: 10px;
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+
+}
+
+.second-menu dl dd {
+    float: left;
+    font-size: 14px;
+    color: #666;
+}
+
+.second-menu dl dd a {
+    padding: 0 10px;
+    border-left: 1px solid #999;
+}
+
+.second-menu dl dd:last-child a {
+    padding-right: 0;
+}
+
+.content .left-aside ul li:hover .second-menu {
+    display: block;
+}
+
+.content .left-aside ul li:hover {
+    background-color: #c6c2c2;
+}
+
+
 
 
 /* 轮播图 */
@@ -203,87 +243,9 @@
 .content .right-aside .right-aside-news {
     width: 290px;
     height: 158px;
-    background-color: blue;
+    background-color: deepskyblue;
 }
 
-.content .right-aside .right-aside-spirit {
-    float: left;
-    margin-top: 10px;
-    width: 290px;
-    height: 290px;
-    background-color: skyblue;
-}
-
-.content .right-aside .right-aside-spirit .spirit_image {
-    width: 48px;
-    height: 48px;
-    background-image: url(../images/assets/精灵图-侧边功能.png);
-    background-repeat: no-repeat;
-    /* background-size: 48px 48px; */
-}
-
-.content .right-aside .right-aside-spirit .spirit {
-    float: left;
-    width: 48px;
-    height: 71px;
-    margin-top: 16px;
-    margin-left: 22px;
-    background-color: yellow;
-}
-
-.spirit01 {
-    background-position:  0 0;
-}
-
-.spirit02 {
-    background-position:  -48px 0;
-}
-
-
-.spirit03 {
-    background-position:  -96px 0;
-}
-
-.spirit04 {
-    background-position:  -144px 0;
-}
-
-.spirit05 {
-    background-position:  0 -48px;
-}
-
-.spirit06 {
-    background-position:  -48px -48px;
-}
-
-.spirit07 {
-    background-position:  -96px -48px;
-}
-
-.spirit08 {
-    background-position:  -144px -48px;
-}
-
-.spirit09 {
-    background-position:  0 -96px;
-}
-
-.spirit10 {
-    background-position:  -48px -96px;
-}
-
-.spirit11 {
-    background-position:  -96px -96px;
-}
-
-.spirit12 {
-    background-position:  -144px -96px;
-}
-
-
-.content .right-aside .right-aside-spirit .spirit:nth-of-type(4n+1){
-    margin-left: 16px;
-}
 
 /* #endregion */
 /* content 主体内容的结束位置 */
