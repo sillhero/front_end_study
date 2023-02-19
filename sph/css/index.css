@@ -354,6 +354,7 @@
 /* #endregion */
 /* content 主体内容的结束位置 */
 
+
 /* 秒杀内容开始位置 */
 /* #region */
 .seckill {
@@ -371,3 +372,180 @@
 }
 /* #endregion */
 /* 秒杀内容结束位置 */
+
+
+/* 楼层开始位置 */
+/* #region */
+.floor1 {
+    margin-top: 48px;
+}
+
+.floor1 .floor_top {
+    width: 1190px;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #DD302D;
+}
+
+.floor1 .floor_top span {
+    float: left;
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+
+.floor1 .floor_top ul li {
+    float: left;
+    height: 34px;
+    line-height: 34px;
+    font-size: 16px;
+    color: #666666;
+}
+
+.floor1 .floor_top ul li a {
+    padding: 0 10px;
+    border-right: 1px solid #666;
+}
+
+.floor1 .floor_top ul li:last-child a {
+    padding-right: 0;
+    border-right: 0;
+}
+
+.floor1 .floor_top ul li:first-child a {
+    padding-left: 0;
+    color: #DD302D;
+}
+
+/* 楼层下半部分 */
+.floor1 .floor_bottom div{
+    float: left;
+    height: 432px;
+}
+
+.floor1 .floor_bottom .item1 {
+    width: 190px;
+    height: 412px;
+    /*内容对于盒子是有边距的*/
+    padding: 20px 20px 0 20px;
+    background-color: #F4F4F4 ;
+}
+
+.floor1 .floor_bottom .item1 ul {
+    margin-bottom: 30px;
+}
+
+.floor1 .floor_bottom .item1 ul li {
+    width: 90px;
+    padding-bottom: 3.5px;
+    font-size: 16px;
+    color: #666666;
+    border-bottom: 1px solid #d9d9d9;
+    text-align: center;
+}
+.floor1 .floor_bottom .item1 ul li:nth-of-type(2n) {
+    float: right;
+    /*padding-right: 13px;*/
+}
+
+.floor1 .floor_bottom .item1 ul li:nth-of-type(2n+1){
+    float: left;
+    /*padding-left: 13px;*/
+}
+
+
+.floor1 .floor_bottom .item2 {
+    width: 340px;
+    background-color: greenyellow;
+}
+
+.floor1 .floor_bottom .item3, .floor1 .floor_bottom .item4, .floor1 .floor_bottom .item5 {
+    width: 206px;
+    background-color: yellow;
+}
+
+.floor1 .floor_bottom .item4 {
+    border-left: 1px solid #e2e2e2;
+    border-right: 1px solid #e2e2e2;
+}
+
+.floor1 .floor_bottom .item3 img,.floor1 .floor_bottom .item4 img, .floor1 .floor_bottom .item5 img {
+    border-bottom: 1px solid #e2e2e2;
+}
+/* #endregion */
+/* 楼层结束位置 */
+
+/* 页脚开始位置 */
+/* #region */
+
+.footer {
+    height: 440px;
+    margin-top: 49px;
+    padding-top: 48px;
+    background-color: #483E3E;
+}
+
+.footer .footer-top {
+    height: 198px;
+    border-bottom: 1px solid #584D4D;
+}
+
+.footer .footer-top ul li {
+    float: left;
+    margin-right: 10px;
+    width: 190px;
+}
+
+.footer .footer-top ul li:last-child {
+    margin-right: 0;
+}
+
+.footer .footer-top ul li dl dd {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.footer .footer-bottom {
+    margin-top: 47px;
+    text-align: center;
+}
+
+.footer .footer-bottom ul {
+    display: inline-block;
+}
+
+.footer .footer-bottom ul li {
+    float: left;
+}
+
+.footer .footer-bottom ul li a {
+    padding: 0 26px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    border-right: 1px solid #d9d9d9;
+}
+
+.footer .footer-bottom ul li:last-child a {
+    padding-right: 0;
+    border-right: 0;
+}
+
+.footer .footer-bottom ul li:first-child a {
+    padding-left: 0;
+}
+
+.footer .copyright {
+    width: 190px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+/* #endregion */
+/* 页脚结束位置 */
