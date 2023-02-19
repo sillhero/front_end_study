@@ -227,26 +227,147 @@
 .content .content-swiper {
     width: 690px;
     height: 458px;
-    /* margin-left: 10px; */
-    background-color: skyblue;
-    /* background-image: url(../images/assets/banner主图.png); */
+    background-image: url(../images/assets/banner主图.png);
 }
+
+
 
 /* 右侧栏 */
 .content .right-aside {
     width: 290px;
     height: 458px;
-    background-color: salmon;
 }
 
 /* 右侧栏新闻 */
-.content .right-aside .right-aside-news {
-    width: 290px;
-    height: 158px;
-    background-color: deepskyblue;
+.content .right-aside .news {
+    width: 260px;
+    height: 156px;
+    /* 宽度 14 + 14 + 边框 1 + 1 */
+    padding: 0 14px;
+    border: 1px solid #d9d9d9;
 }
 
+.content .right-aside .news .title {
+    height: 38px;
+    line-height: 38px;
+    border-bottom: 1px solid #d9d9d9;
+}
 
+.content .right-aside .news .title span {
+    font-size: 14px;
+    color: #000000;
+    font-weight: bolder;
+}
+
+.content .right-aside .news ul li {
+    height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+    color: #666666;
+}
+
+/* 右侧精灵图 */
+.content .right-aside .sprites {
+    width: 258px;
+    height: 274px;
+    margin-top: 10px;
+    padding: 16px 16px 0 16px;
+}
+
+.content .right-aside .sprites ul{
+    margin-bottom: 16px;
+}
+
+.content .right-aside .sprites ul li {
+    float: left;
+    width: 48px;
+    height: 71px;
+    margin-right: 22px;
+    text-align: center;
+}
+
+.content .right-aside .sprites ul li div{
+    width: 48px;
+    height: 48px;
+    background-image: url(../images/assets/精灵图-侧边功能.png);
+    background-repeat: no-repeat;
+}
+
+.content .right-aside .sprites ul li span {
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.content .right-aside .sprites ul:nth-child(1) li:nth-child(1) div {
+
+    background-position: 0 0;
+}
+
+.content .right-aside .sprites ul:nth-child(1) li:nth-child(2) div {
+    background-position: -48px 0;
+}
+
+.content .right-aside .sprites ul:nth-child(1) li:nth-child(3) div {
+    background-position: -96px 0;
+}
+
+.content .right-aside .sprites ul:nth-child(1) li:nth-child(4) div {
+    background-position: -144px 0;
+}
+
+.content .right-aside .sprites ul:nth-child(2) li:nth-child(1) div {
+    background-position: 0 -48px;
+}
+
+.content .right-aside .sprites ul:nth-child(2) li:nth-child(2) div {
+    background-position: -48px -48px;
+}
+
+.content .right-aside .sprites ul:nth-child(2) li:nth-child(3) div {
+    background-position: -96px -48px;
+}
+
+.content .right-aside .sprites ul:nth-child(2) li:nth-child(4) div {
+    background-position: -144px -48px;
+}
+
+.content .right-aside .sprites ul:nth-child(3) li:nth-child(1) div {
+    background-position: 0 -96px;
+}
+
+.content .right-aside .sprites ul:nth-child(3) li:nth-child(2) div {
+    background-position: -48px -96px;
+}
+
+.content .right-aside .sprites ul:nth-child(3) li:nth-child(3) div {
+    background-position: -96px -96px;
+}
+
+.content .right-aside .sprites ul:nth-child(3) li:nth-child(4) div {
+    background-position: -144px -96px;
+}
+
+.content .right-aside .sprites ul li:last-child {
+    margin-right: 0;
+}
 /* #endregion */
 /* content 主体内容的结束位置 */
 
+/* 秒杀内容开始位置 */
+/* #region */
+.seckill {
+    height: 190px;
+    margin-top: 10px;
+}
+
+.seckill ul li {
+    float: left;
+    margin-right: 11px;
+}
+
+.seckill ul li:last-child {
+    margin-right: 0;
+}
+/* #endregion */
+/* 秒杀内容结束位置 */
