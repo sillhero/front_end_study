@@ -187,14 +187,12 @@
 
 .second-menu dl dt {
     float: left;
-
     width: 70px;
     height: 20px;
     margin-right: 10px;
     font-size: 14px;
     color: #000000;
     font-weight: bold;
-
 }
 
 .second-menu dl dd {
@@ -458,6 +456,10 @@
     width: 340px;
     background-color: greenyellow;
 }
+
+/* .floor_bottom .item5 {
+    float: right;
+} */
 
 .floor1 .floor_bottom .item3, .floor1 .floor_bottom .item4, .floor1 .floor_bottom .item5 {
     width: 206px;
