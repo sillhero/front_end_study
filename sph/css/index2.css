@@ -1,0 +1,21 @@
+/* 网页主体样式--所有都要使用 */
+.container {
+    width: 1190px;
+    margin: 0 auto;
+}
+
+/* 网页头部的开始 */
+/* #region */
+
+/* 头部的导航 */
+.header {
+    height: 30px;
+    background-color: #ececec;
+}
+
+.header span {
+    line-height: 30px; 
+}
+
+/* #endregion */
+/* 网页头部的结尾 */
