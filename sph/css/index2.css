@@ -58,3 +58,137 @@
 
 /* #endregion */
 /* 网页头部的结尾 */
+
+/* 搜索框-logo-start */
+/* #region */
+
+.nav-search {
+    height: 120px;
+}
+
+.nav-search .search {
+    margin: 42px 0;
+}
+
+/* 消除块元素之间的间距 */
+.nav-search .search form {
+    font-size: 0;
+    height: 36px;
+}
+
+.nav-search .search form input {
+    width: 510px;
+    height: 36px;
+    border: 1px solid #dd302d;
+}
+
+.nav-search .search form button {
+    width: 80px;
+    height: 36px;
+    /*消除基线对齐的问题*/
+    vertical-align: top;
+    background-color: #dd302d;
+    background-image: url(../images/assets/serch_icon.png);
+    background-repeat: no-repeat;
+    background-position: 28px 6px;
+
+}
+
+/* #endregion */
+/* 搜索框-logo-end */
+
+
+/* 商品分类导航 */
+/* #region */
+.products {
+    height: 48px;
+    border-bottom: 1px solid #DD302D;
+}
+
+.products .type-of-products {
+    width: 190px;
+    height: 48px;
+
+    background-color: #DD302D;
+    text-align: center;
+    line-height: 48px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.products .product-list ul {
+    line-height: 48px;
+}
+
+.products .product-list ul li {
+    float: left;
+    margin: 0 10px;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.products .product-list ul li:last-child {
+    margin-right: 0;
+}
+/* #endregion */
+/* 商品分类导航结束 */
+
+/* 主体内容--start */
+/* #region */
+.content {
+    height: 458px;
+    margin-top: 10px;
+    background-color: skyblue;
+}
+
+.content .left-aside {
+    position: relative;
+    box-sizing: border-box;
+    width: 190px;
+    height: 458px;
+    margin-right: 10px;
+
+    padding-top: 9px;
+    padding-left: 16px;
+    background-color: #f4f4f4;
+}
+
+/* 二级菜单 */
+.content .left-aside .second-menu {
+    position: absolute;
+    left: 190px;
+    top: 0;
+    width: 700px;
+    height: 458px;
+    background-color: #E3E3E3;
+}
+
+.content .rotation-chart {
+    width: 690px;
+    height: 458px;
+    background-image: url(../images/assets/banner主图.png);
+}
+
+.content .right-aside {
+    width: 290px;
+    height: 458px;
+    background-color: aqua;
+}
+
+.content .left-aside ul li {
+    /* margin-bottom: 8px; */
+    height: 20px;
+    line-height: 20px;
+    padding: 4px 0 4px 0;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+.content .left-aside ul li:first-child {
+    padding-top: 0;
+}
+
+/* #endregion */
+/* 主体内容--end */
