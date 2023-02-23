@@ -77,6 +77,7 @@
 }
 
 .nav-search .search form input {
+    box-sizing: border-box;
     width: 510px;
     height: 36px;
     border: 1px solid #dd302d;
@@ -140,9 +141,11 @@
 .content {
     height: 458px;
     margin-top: 10px;
-    background-color: skyblue;
 }
 
+
+/* 左侧栏-start */
+/* #region */
 .content .left-aside {
     position: relative;
     box-sizing: border-box;
@@ -155,6 +158,7 @@
 }
 
 /* 二级菜单--start */
+/* #region */
 .content .left-aside .second-menu {
     display: none;
     position: absolute;
@@ -170,7 +174,6 @@
 }
 
 .content .left-aside ul li {
-    /* margin-bottom: 8px; */
     height: 20px;
     line-height: 20px;
     padding: 4px 0 4px 16px;
@@ -227,12 +230,341 @@
     background-image: url(../images/assets/banner主图.png);
 }
 
+
+/* 左侧栏 */
+/* #endregion */
+
+/* #endregion */
+
+
 .content .right-aside {
     width: 290px;
     height: 458px;
-    background-color: aqua;
+}
+/* 右侧新闻栏 */
+.content .right-aside .news {
+    box-sizing: border-box;
+    width: 290px;
+    height: 158px;
+    padding: 0 14px;
+    border: 1px solid #d9d9d9;
+}
+
+.content .right-aside .news .title {
+    /* 这里的高度 是直接从顶到分割线 */
+    height: 38px;
+    line-height: 38px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.content .right-aside .news .title span {
+    font-size: 14px;
+    color: #000;
+}
+
+.content .right-aside .news .title a {
+    font-size: 12px;
 }
 
 
+.content .right-aside .news ul li {
+    /* 高度计算 */
+    /* 所有li是等高的 */
+    /* 除开标题38px 以及分割线1px 那么还剩117px 等高除以4 为29.25px  */
+    /* 117 再去减去 最后一个的下边距18px 约等于100 等分后为25px */
+    height: 26px;
+    line-height: 26px;
+    font-size: 12px;
+    color: #666;
+}
+
+/* 右侧精灵图 */
+.content .right-aside .sprites {
+    box-sizing: border-box;
+    width: 290px;
+    height: 290px;
+    margin-top: 10px;
+    padding: 16px 16px 0 16px;
+}
+
+.content .right-aside .sprites ul {
+    margin-bottom: 16px;
+}
+
+.content .right-aside .sprites ul li {
+    float: left;
+    height: 71px;
+    width: 48px;
+    margin-right: 22px;
+
+    text-align: center;
+}
+.content .right-aside .sprites ul li:last-child {
+    margin-right: 0;
+}
+
+.content .right-aside .sprites ul li div {
+    width: 48px;
+    height: 48px;
+    background-image: url(../images/assets/精灵图-侧边功能.png);
+}
+
+.content .right-aside .sprites ul:nth-child(1) li:nth-child(1) div {
+    background-position: 0 0;
+}
+
+.content .right-aside .sprites ul:nth-child(1) li:nth-child(2) div {
+    background-position: -48px 0;
+}
+
+.content .right-aside .sprites ul:nth-child(1) li:nth-child(3) div {
+    background-position: -96px 0;
+}
+
+.content .right-aside .sprites ul:nth-child(1) li:nth-child(4) div {
+    background-position: -144px 0;
+}
+
+.content .right-aside .sprites ul:nth-child(2) li:nth-child(1) div {
+    background-position: 0 -48px;
+}
+
+.content .right-aside .sprites ul:nth-child(2) li:nth-child(2) div {
+    background-position: -48px -48px;
+}
+
+.content .right-aside .sprites ul:nth-child(2) li:nth-child(3) div {
+    background-position: -96px -48px;
+}
+
+.content .right-aside .sprites ul:nth-child(2) li:nth-child(4) div {
+    background-position: -144px -48px;
+}
+
+.content .right-aside .sprites ul:nth-child(3) li:nth-child(1) div {
+    background-position: 0 -96px;
+}
+
+.content .right-aside .sprites ul:nth-child(3) li:nth-child(2) div {
+    background-position: -48px -96px;
+}
+
+.content .right-aside .sprites ul:nth-child(3) li:nth-child(3) div {
+    background-position: -96px -96px;
+}
+
+.content .right-aside .sprites ul:nth-child(3) li:nth-child(4) div {
+    background-position: -144px -96px;
+}
+
 /* #endregion */
 /* 主体内容--end */
+
+/* 秒杀模块--start */
+/* #region */
+.seckill {
+    height: 190px;
+    margin-top: 10px;
+}
+
+.seckill ul li {
+    float: left;
+    margin-right: 10px;
+}
+
+.seckill ul li:last-child {
+    margin-right: 0;
+}
+
+/* #endregion */
+/* 秒杀模块--end */
+
+/* 楼层模块--start */
+/* #region */
+.floor1 {
+    margin-top: 48px;
+}
+
+/* 楼层上层 */
+.floor1 .floor1-top{
+    box-sizing: border-box;
+    padding-bottom: 4px;
+    border-bottom: 2px solid #dd302d;
+}
+
+.floor1 .floor1-top span {
+    height: 30px;
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+}
+
+.floor1 .floor1-top ul {
+    float: right;
+    line-height: 34px;
+}
+
+.floor1 .floor1-top ul li {
+    float: left;
+    color: #666;
+    font-size: 16px;
+}
+
+.floor1 .floor1-top ul li a {
+    padding: 0 10px;
+    border-right: 1px #666 solid;
+}
+
+.floor1 .floor1-top ul li:last-child a {
+    padding-right: 0;
+    border-right: none;
+} 
+
+.floor1 .floor1-top ul li:first-child a {
+    padding-left: 0;
+} 
+
+/* 楼层下层 */
+.floor1 .floor1_bottom div {
+    float: left;
+    height: 432px;
+}
+
+.floor1 .floor1_bottom .item1 {
+    box-sizing: border-box;
+    width: 230px;
+    padding: 20px 20px 0 20px;
+    background-color: #f4f4f4;
+}
+
+.floor1 .floor1_bottom .item1 .list{
+    height: 108px;
+    padding-bottom: 30px;
+}
+
+
+.floor1 .floor1_bottom .item1 ul li {
+    padding-bottom: 3.5px;
+    width: 90px;
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    border-bottom: 1px #d9d9d9 solid;
+}
+
+/* 奇数左浮动 */
+.floor1 .floor1_bottom .item1 ul li:nth-of-type(2n+1) {
+    float: left;
+}
+
+
+/* 偶数右浮动 */
+.floor1 .floor1_bottom .item1 ul li:nth-of-type(2n) {
+    float: right;
+}
+
+
+.floor1 .floor1_bottom .item2 {
+    width: 340px;
+    background-image: url(../images/assets/appliance_banner07.png);
+}
+
+.floor1 .floor1_bottom .item3 {
+    width: 206px;
+}
+
+.floor1 .floor1_bottom .item3 img {
+    border-bottom: 1px #e2e2e2 solid;
+} 
+
+.floor1 .floor1_bottom .item4 {
+    box-sizing: border-box;
+    width: 206px;
+    border-left: 1px #e2e2e2 solid;
+    border-right: 1px #e2e2e2 solid;
+    background-image: url(../images/assets/冰箱.png);
+}
+
+.floor1 .floor1_bottom .item5 {
+    width: 206px;
+}
+
+.floor1 .floor1_bottom .item5 img {
+    border-bottom: 1px #e2e2e2 solid;
+}
+
+/* #endregion */
+/* 楼层模块--end */
+
+
+/* 页脚模块--start */
+.footer {
+    margin-top: 48px;
+    height: 440px;
+    background-color: #483E3E;
+   
+}
+
+/* 页脚顶部 */
+.footer .footer-top {
+    box-sizing: border-box;
+    height: 246px;
+    border-bottom: 1px #584D4D solid;
+}
+
+.footer .footer-top ul {
+    float: left;
+    width: 190px;
+    padding-top: 48px;
+    padding-right: 10px;
+}
+
+.footer .footer-top ul:last-child {
+    padding-right: 0;
+}
+
+.footer .footer-top ul li a {
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+
+/* 页脚下部 */
+.footer .footer-bottom {
+    text-align: center;
+    margin-top: 47px;
+}
+
+.footer .footer-bottom ul {
+    display: inline-block;
+}
+
+.footer .footer-bottom ul li {
+    float: left;
+}
+
+.footer .footer-bottom ul li a {
+    padding: 0 26px;
+    font-size: 12px;
+    color: #FFFFFF;
+    border-right: 1px solid #d9d9d9;
+}
+
+.footer .footer-bottom ul li:last-child a {
+    padding-right: 0;
+    border-right: none;
+}
+
+.footer .footer-bottom ul li:first-child a {
+    padding-left: 0;
+}
+
+.footer .footer-bottom div {
+    width: 190px;
+    height: 18px;
+    margin: 10px auto 0 auto;
+    font-size: 12px;
+    color: #FFFFFF;
+}
+
+/* 页脚模块--end */
