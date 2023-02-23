@@ -151,19 +151,75 @@
     margin-right: 10px;
 
     padding-top: 9px;
-    padding-left: 16px;
     background-color: #f4f4f4;
 }
 
-/* 二级菜单 */
+/* 二级菜单--start */
 .content .left-aside .second-menu {
+    display: none;
     position: absolute;
     left: 190px;
     top: 0;
+
+    box-sizing: border-box;
     width: 700px;
-    height: 458px;
+    min-height: 458px;
+    padding-left: 20px;
+    padding-top: 10px;
     background-color: #E3E3E3;
 }
+
+.content .left-aside ul li {
+    /* margin-bottom: 8px; */
+    height: 20px;
+    line-height: 20px;
+    padding: 4px 0 4px 16px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+.content .left-aside ul li:first-child {
+    padding-top: 0;
+}
+
+
+.content .left-aside .second-menu dl dd, .content .left-aside .second-menu dl dt{
+    float: left;
+    font-size: 14px;
+}
+
+.content .left-aside .second-menu dl {
+    height: 36px;
+}
+
+.content .left-aside .second-menu dl dt {
+    width: 70px;
+    height: 20px;
+    color: #000;
+    margin-right: 10px;
+}
+
+.content .left-aside .second-menu dl dd {
+    padding: 0 10px;
+    color: #666;
+    border-left: 1px #999 solid;
+    font-weight: 500;
+}
+
+.content .left-aside .second-menu dl dd:last-child {
+    padding-right: 0;
+}
+
+/* 二级菜单联动 */
+.content .left-aside ul li:hover .second-menu{
+    display: block;
+}
+
+.content .left-aside ul li:hover {
+    background-color: #E3E3E3;
+}
+/* 二级菜单--end */
+
 
 .content .rotation-chart {
     width: 690px;
@@ -177,18 +233,6 @@
     background-color: aqua;
 }
 
-.content .left-aside ul li {
-    /* margin-bottom: 8px; */
-    height: 20px;
-    line-height: 20px;
-    padding: 4px 0 4px 0;
-    font-size: 14px;
-    color: #333;
-    font-weight: bold;
-}
-.content .left-aside ul li:first-child {
-    padding-top: 0;
-}
 
 /* #endregion */
 /* 主体内容--end */
