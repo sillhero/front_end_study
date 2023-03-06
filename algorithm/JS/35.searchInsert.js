@@ -19,6 +19,7 @@ var searchInsert = function(nums, target) {
         }
         mid = parseInt((left + right) << 2);
     }
+    // 这里的判断是针对目标值在数组中查找失败的时候返回的对应应该插入的位置
     return nums[mid] < target ? mid += 1: mid;
 };
 
