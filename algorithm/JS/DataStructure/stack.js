@@ -98,6 +98,17 @@ class StackBySelf {
     }
 }
 const stack = new StackBySelf();
+console.log(stack.isEmpty());
+stack.push(5);
+stack.push(8);
+
+console.log(stack.peek());
+stack.push(11);
+console.log(stack.size());
+
+console.log(stack.pop());
+console.log(stack);
+console.log(stack.toString());
 stack.push(5);
 stack.push(8);
 console.log(stack.item);
