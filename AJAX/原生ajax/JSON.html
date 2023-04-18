@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	手机号：<input type="text" id="phone"><span></span>
+	<script>
+		// 获取input元素
+		let input = document.querySelector('input');
+		let span = document.querySelector('span');
+        // 绑定事件
+		input.onblur = function () {
+            // 创建请求实例对象
+            let xhr = new XMLHttpRequest();
+            let phone = this.value;
+            // 设置响应体的格式
+			xhr.open('GET', 'http://localhost:8080/checkPhone?phone=' + phone, true);
+            xhr.send();
+            // 绑定事件
+			xhr.onload = function () {
+				// 获取响应体
+				// 手动转换为JSON对象
+				let json = JSON.parse(xhr.responseText);
+                if (!json.available){
+					span.innerHTML = '手机号已经被注册';
+                    input.classList.add('error');
+				}else {
+                    span.innerHTML = '手机号可以使用';
+					input.classList.remove('error');
+                }
+			}
+        }
+	</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<table>
+	<table>
+		<tr>
+			<td>汽车品牌</td>
+			<td>价格</td>
+		</tr>
+		<tr>
+			<td>比亚迪</td>
+			<td>20000</td>
+		</tr>
+		<tr>
+			<td>华为</td>
+			<td>29999</td>
+		</tr>
+	</table>
+</table>
+<script>
+	let tds = document.querySelectorAll('td');
+    tds.forEach(item => {
+        item.addEventListener('click', function () {
+			this.style.background = 'orange';
+		})
+    })
+</script>
+</body>
+</html>

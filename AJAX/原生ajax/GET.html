@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<button>点击发送AJAX请求</button>
+	<script>
+		var btn = document.querySelector('button');
+        // 绑定事件
+		btn.onclick = function () {
+            // 创建请求实例对象
+			var xhr = new XMLHttpRequest();
+            // 初始化
+
+
+            // readyState 总共有5个值
+            // 0: 请求未初始化
+            // 1: 服务器连接已建立 open()方法已调用
+            // 2: 请求已接收 send()方法已调用
+            // 3: 请求处理中 服务器正在处理请求 部分响应已经返回
+            // 4: 请求已完成，且响应已就绪 服务器已经完成响应
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) { // 响应完成
+					console.log(xhr.responseURL);
+					console.log(xhr.status);
+					console.log(xhr.getAllResponseHeaders());
+                	console.log(xhr.responseText);
+                }
+                console.log(xhr.readyState);
+            }
+			xhr.open('GET', 'http://localhost:8080/server', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.setRequestHeader('Accept', 'application/json');
+            xhr.setRequestHeader('id', '100');
+			xhr.send();
+            // 绑定问题
+			xhr.onload = function () {
+                console.log(xhr.responseURL);
+                console.log(xhr.status);
+                console.log(xhr.getAllResponseHeaders());
+				console.log(xhr.responseText);
+			}
+		}
+	</script>
+</body>
+</html>

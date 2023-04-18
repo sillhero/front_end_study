@@ -1,0 +1,20 @@
+{
+  "danmu": [
+    {
+      "text": "你好",
+      "color": "#ffffff",
+      "size": "1",
+      "position": "0",
+      "time": "0"
+    }
+  ],
+    "video": {
+        "url": "http://v.youku.com/v_show/id_XMzQ5NjQ5NjQ0NA==.html?spm=a2h3j.8428770.3416059.1",
+        "pic": "http://r1.ykimg.com/054204085A4B8E6B7F0E0F0E0100B0B5",
+        "thumbnails": "http://r1.ykimg.com/054204085A4B8E6B7F0E0F0E0100B0B5",
+        "title": "【鬼畜】我是你的小宝贝",
+        "description": "【鬼畜】我是你的小宝贝",
+        "type": "youku",
+          "width": "1280"
+    }
+}
