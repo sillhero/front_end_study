@@ -35,5 +35,15 @@ router.post('/account', (req, res) => {
   res.render('success', {msg: '添加记录成功'});
 });
 
+// 删除账单
+router.get('/account/delete/:id', (req, res) => {
+  // 获得params中的id参数
+  let id = req.params.id;
+  // 删除
+  db.get('accounts').remove({id: id}).write();
+  // 提醒
+  res.send('删除成功');
+});
+
 
 module.exports = router;
