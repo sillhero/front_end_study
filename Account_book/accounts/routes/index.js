@@ -14,7 +14,10 @@ const shortid = require('shortid');
 /* GET home page. */
 // 记账本列表
 router.get('/account', function(req, res, next) {
-  res.render('list');
+  // 获取所有的账单列表
+  let accounts = db.get('accounts').value();
+  console.log(accounts);
+  res.render('list', {accounts: accounts});
 });
 
 router.get('/account/create', function(req, res, next) {
@@ -28,7 +31,8 @@ router.post('/account', (req, res) => {
   // 这里的req.body是一个对象，...req.body是将对象展开，之后与id拼接，形成一个新的对象插入数据库中
   db.get('accounts').unshift({id:id, ...req.body}).write(); // 头部插入
   console.log(req.body);
-  res.send('添加记录');
+  // res.send('添加记录');
+  res.render('success', {msg: '添加记录成功'});
 });
 
 
