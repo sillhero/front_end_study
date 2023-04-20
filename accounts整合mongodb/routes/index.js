@@ -28,8 +28,16 @@ console.log(moment('2019-01-01').toDate());
 // 记账本列表
 router.get('/account', function(req, res, next) {
   // 获取所有的账单列表
+  // 读取集合信息
+  AccountModel.find().sort({time: -1}).then(data => {
+    console.log(data);
+    res.render('list', {accounts: data, moment: moment});
+  }, err => {
+    res.status(500).send('Server error');
+    return;
+  });
   console.log(req.query);
-  res.render('success', {msg: '添加记录成功'});
+  // res.render('list', {msg: '添加记录成功'});
 });
 
 
@@ -69,7 +77,20 @@ router.get('/account/delete/:id', (req, res) => {
   // 获得params中的id参数
   let id = req.params.id;
   // 删除
-  db.get('accounts').remove({id: id}).write();
+  // db.get('accounts').remove({id: id}).write();
+
+  // 使用mongodb删除
+  AccountModel.deleteOne({id: id}).then(data => {
+    console.log(data);
+    console.log('删除成功');
+    res.render('success', {msg: '删除成功'});
+  }, err => {
+    console.log(err);
+    console.log('删除失败');
+    res.status(500).send('Server error');
+    return;
+  });
+
   // 提醒
   res.send('删除成功');
 });
