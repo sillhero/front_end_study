@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+
+	<script src="promise.js"></script>
+	<script>
+		// 创建一个Promise对象
+		let p = new Promise(function (resolve, reject) {
+			// resolve('成功');
+			// reject('失败');
+			setTimeout(function () {
+				resolve('成功OK');
+			}, 2000);
+			// throw '失败';
+		});
+
+
+        // 调用then方法
+		p.then(function (data) {
+			console.log(data);
+		}, function (reason) {
+			console.log(reason);
+		});
+
+        p.then(function (data) {
+            alert(data);
+        }, function (reason) {
+            alert(reason);
+        });
+	</script>
+</body>
+</html>

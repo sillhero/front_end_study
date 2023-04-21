@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <title>index</title>
+    </head>
+    <body>
+        <script src="./promise.js"></script>
+        <script>
+            let p = new Promise((resolve, reject) => {
+                // 同步任务情况
+                setTimeout(() => {
+                    reject("Error");
+                }, 2000);
+            });
+
+            p.then((value) => {
+                console.log(value);
+                alert(value);
+            }, (reason) => {
+                console.log(reason);
+                alert(reason);
+            });
+        </script>
+    </body>
+</html>
