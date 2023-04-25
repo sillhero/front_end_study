@@ -1,0 +1,14 @@
+{
+  "name": "axios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "axios_爬虫.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nprogress": "^0.2.0"
+  }
+}

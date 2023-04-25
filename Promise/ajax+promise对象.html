@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+  <button>发送ajax请求</button>
+  <script>
+    function sendAjax(method, url) {
+        return new Promise(function (resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.open(method, url);
+            xhr.send();
+            xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                resolve(xhr.responseText);
+                } else {
+                reject(xhr.status);
+                }
+            }
+            }
+        })
+    }
+
+    // 获取按钮
+    let btn = doucment.querySelector('button');
+
+    btn.onclick = async function () {
+        try {
+          let body = await sendAjax('get', 'http://localhost:3000');
+          console.log(body);
+        } catch (status) {
+          console.log(status);
+        }
+
+    }
+
+  </script>
+</body>
+</html>

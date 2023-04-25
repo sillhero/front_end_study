@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios 创建对象发送请求</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+</head>
+<body>
+    <button>王者荣耀</button>
+    <button>英雄联盟</button>
+
+    <button>新闻</button>
+    <button>歌曲</button>
+    <button>段子</button>
+
+    <script>
+       // 获取所有按钮
+       let btns = document.querySelectorAll('button');
+
+       // 创建 axios 的实例发送请求
+       let remoteAxios = axios.create({
+           baseURL: 'http://api.xiaohigh.com',
+       });
+
+       let localAxios = axios.create({
+           baseURL: 'http://localhost:3000',
+       });
+
+       btns[0].onclick = async function() {
+              let res = await remoteAxios.get('/heros');
+              console.log(res);
+        }
+
+        btns[1].onclick = async function() {
+              let res = await remoteAxios.get('/lol');
+              console.log(res);
+        }
+
+    </script>
+</body>
+</html>

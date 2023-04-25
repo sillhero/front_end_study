@@ -1,0 +1,183 @@
+{
+    "song": [
+      {
+        "id": 1,
+        "name": "干杯",
+        "singer": "五月天"
+      },
+      {
+        "id": 2,
+        "name": "当",
+        "singer": "动力火车"
+      },
+      {
+        "id": 3,
+        "name": "不能说的秘密",
+        "singer": "周杰伦"
+      },
+      {
+        "name": "稻香",
+        "singer": "周杰伦",
+        "id": 4
+      },
+      {
+        "name": "weiweiwei",
+        "singer": "爱坤",
+        "id": 5
+      },
+      {
+        "singer": "米津玄师",
+        "name": "春雷",
+        "id": 6
+      },
+      {
+        "name": "你太美",
+        "singer": "爱坤",
+        "id": 7
+      },
+      {
+        "name": "你太美",
+        "singer": "爱坤",
+        "id": 8
+      },
+      {
+        "name": "这一首简单的歌",
+        "singer": "王力宏",
+        "id": 9
+      },
+      {
+        "name": "你太美",
+        "singer": "爱坤",
+        "id": 10
+      },
+      {
+        "name": "你太美",
+        "singer": "爱坤",
+        "id": 11
+      },
+      {
+        "name": "鸡你太美",
+        "singer": "爱坤",
+        "id": 12
+      },
+      {
+        "name": "我记得",
+        "singer": "赵雷",
+        "id": 13
+      },
+      {
+        "name": "我记得",
+        "singer": "赵雷",
+        "id": 14
+      },
+      {
+        "name": "我记得",
+        "singer": "赵雷",
+        "id": 15
+      },
+      {
+        "name": "我记得",
+        "singer": "赵雷",
+        "id": 16
+      },
+      {
+        "name": "我记得",
+        "singer": "赵雷",
+        "id": 17
+      },
+      {
+        "name": "我记得",
+        "singer": "赵雷",
+        "id": 18
+      },
+      {
+        "name": "我记得",
+        "singer": "赵雷",
+        "id": 19
+      }
+    ],
+    "news": [
+      {
+        "id": 1,
+        "title": "马云退休，阿里巴巴将由新一代领导团队接管",
+        "author": "记者张三",
+        "time": "2023-04-22T10:30:00Z",
+        "content": "阿里巴巴宣布，创始人马云已经退休，新一代领导团队将接管公司的运营。马云在一份声明中表示，他决定退休是因为他希望有更多的时间与家人共度。他对阿里巴巴的未来充满信心，相信新一代领导团队能够带领公司走向更加光明的未来。"
+      },
+      {
+        "id": 2,
+        "title": "苹果发布新款 iPhone",
+        "author": "记者李四",
+        "time": "2023-04-22T09:00:00Z",
+        "content": "苹果公司昨天宣布推出了全新的 iPhone。该机拥有更快的处理器、更大的存储空间以及全新的相机系统。此外，该机还配备了全新的设计，使用了更轻的材料，并具有更长的电池续航能力。苹果表示，这款新 iPhone 将带给用户更好的使用体验。"
+      }
+    ],
+    "web": [
+      {
+        "id": 1,
+        "url": "https://www.baidu.com/",
+        "keyword": "搜索引擎",
+        "title": "百度一下，你就知道"
+      },
+      {
+        "id": 2,
+        "url": "https://www.taobao.com/",
+        "keyword": "电子商务",
+        "title": "淘宝网"
+      },
+      {
+        "id": 3,
+        "url": "https://www.tmall.com/",
+        "keyword": "电子商务",
+        "title": "天猫"
+      },
+      {
+        "id": 4,
+        "url": "https://www.qq.com/",
+        "keyword": "社交网络",
+        "title": "腾讯网"
+      },
+      {
+        "id": 6,
+        "url": "https://www.jd.com/",
+        "keyword": "电子商务",
+        "title": "京东"
+      },
+      {
+        "id": 8,
+        "url": "https://www.sina.com.cn/",
+        "keyword": "新闻",
+        "title": "新浪网"
+      },
+      {
+        "id": 9,
+        "url": "https://www.zhihu.com/",
+        "keyword": "问答社区",
+        "title": "知乎"
+      },
+      {
+        "id": 11,
+        "url": "https://www.ctrip.com/",
+        "keyword": "旅游",
+        "title": "携程旅游网"
+      },
+      {
+        "id": 12,
+        "url": "https://www.meituan.com/",
+        "keyword": "本地生活",
+        "title": "美团"
+      },
+      {
+        "id": 13,
+        "url": "https://www.douban.com/",
+        "keyword": "文化交流",
+        "title": "豆瓣"
+      },
+      {
+        "id": 14,
+        "url": "https://www.xinhuanet.com/",
+        "keyword": "新闻",
+        "title": "新华网"
+      }
+    ]
+  }

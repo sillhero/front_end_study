@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.bootcdn.net/ajax/libs/axios/1.3.6/axios.js"></script>
+  <!-- <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script> -->
+  <script src="mine-axios.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.js"></script>
+
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 1000px;
+      margin: 30px auto;
+    }
+
+    hr {
+      margin: 15px 0;
+    }
+
+    table {
+      width: 100%;
+    }
+
+    table,
+    td {
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+    #search {
+      text-align: right;
+    }
+
+    .del {
+      padding: 6px 12px;
+      border: none;
+      background: rgb(199, 77, 77);
+      color: white;
+      font-size: 12px;
+      border-radius: 2px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>网址列表</h2>
+    <hr>
+    <div id="search">
+      <input type="text" id="keyword"> <button id="searchBtn">搜索</button>
+    </div>
+    <hr>
+    <table border="1">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>标题</td>
+          <td>关键字</td>
+          <td>网址</td>
+          <td>操作</td>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdn.bootcdn.net/ajax/libs/nprogress/0.2.0/nprogress.js"></script>
+
+  <script>
+    //获取 table
+    let table = document.querySelector('tbody');
+    let searchBtn = document.querySelector('#searchBtn');
+    let keywordInput = document.querySelector('#keyword');
+
+    async function load() {
+      try {
+        let webs = await localAxios.get('/web');
+        //渲染数据
+        handleData(webs);
+      } catch (e) {
+        console.log('请求失败~~', e);
+      }
+    }
+
+    load();
+
+    //为 searchBtn 绑定单击事件
+    searchBtn.onclick = async function () {
+      //获取 input 中的关键字
+      let keyword = keywordInput.value;
+      try {
+        //发送 AJAX 请求
+        let result = await axios.get('http://localhost:3000/web', {
+          params: {
+            keyword_like: keyword
+          }
+        });
+        //渲染数据
+        handleData(result)
+      } catch (e) {
+        console.log('请求失败~~', e);
+      }
+    }
+
+    //处理响应回来的网站数据
+    function handleData(data) {
+      //清空数据
+      table.innerHTML = '';
+      //遍历
+      data.data.forEach(item => {
+        //创建 tr 元素
+        let tr = document.createElement('tr');
+        //创建 td
+        let td1 = document.createElement('td');
+        td1.innerHTML = item.id;
+        let td2 = document.createElement('td');
+        td2.innerHTML = item.title;
+        let td3 = document.createElement('td');
+        td3.innerHTML = item.keyword;
+        let td4 = document.createElement('td');
+        let a4 = document.createElement('a');
+        a4.href = item.url;
+        a4.innerHTML = item.url;
+        a4.target = "_blank"
+        td4.append(a4);
+        let td5 = document.createElement('td');
+        let button = document.createElement('button');
+        button.className = 'del'
+        button.innerHTML = '删除';
+        //为 button 元素添加属性
+        button.web_id = item.id;
+        td5.append(button);
+        //绑定事件 删除网址
+        button.onclick = async function () {
+          try {
+            //提示确认
+            if(!confirm('您确定要删除该条数据么?')) return;
+            //发送请求
+            await localAxios.delete(`/web/${this.web_id}`);
+            //如果成功
+            // 获取父级节点
+            this.parentNode.parentNode.remove();
+          } catch (e) {
+            console.log('请求失败~~', e);
+            alert('删除失败~~');
+          }
+        }
+        tr.append(td1, td2, td3, td4, td5);
+        //将 tr 插入到 table
+        table.append(tr);
+      });
+    }
+  </script>
+</body>
+
+</html>
