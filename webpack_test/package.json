@@ -22,7 +22,8 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "html-webpack-plugin": "^5.5.1",
-    "less-loader": "^11.1.0"
+    "less-loader": "^11.1.0",
+    "webpack-dev-server": "^4.13.3"
   },
   "browserslist": {
     "production": [

@@ -27,3 +27,4 @@ import './less/app.less';
 axios.get('http://api.xiaohigh.com/duanzi').then(v => {
     console.log(v);
 });
+

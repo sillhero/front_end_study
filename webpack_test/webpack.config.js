@@ -11,7 +11,8 @@ module.exports = {
         // 输出的文件名
         filename: 'js/bundle.js',
         // 自动清理打包文件夹
-        clean: true
+        clean: true,
+        publicPath: '/'
     },
     // 配置模式
     mode: 'development',
@@ -44,6 +45,37 @@ module.exports = {
                         presets: ['@babel/preset-env'], // 指定 bebel 预设包
                     }
                 }
+            },
+            // 图片处理
+            {
+                test: /\.(png|jpg|gif)$/,
+                type: 'asset', // asset 资产
+                // 解析器
+                parser: {
+                    // 指定进行图片base64编码的最大文件大小
+                    dataUrlCondition: {
+                        maxSize: 5 * 1024 // 5kb 默认8k
+                    }
+                },
+                // 打包生成的文件
+                generator: {
+                    filename: 'images/[name][hash:6][ext]'
+                }
+            },
+            // 打包字体图标处理
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                type: 'asset',
+                // 解析器
+                parser: {
+                    // 指定进行图片base64编码的最大文件大小
+                    dataUrlCondition: {
+                        maxSize: 5 * 1024 // 5kb 默认8k
+                    }
+                },
+                generator: {
+                    filename: 'fonts/[name][hash:6][ext]'
+                }
             }
         ]
     },
@@ -59,5 +91,10 @@ module.exports = {
                 removeComments: true // 去除注释
             }
         })
-    ]
+    ],
+    devServer: {
+        port: 3000,
+        open: true
+    },
+    devtool: 'source-map' // 资源映射
 }
