@@ -1,0 +1,11 @@
+.color-wrapper{
+  width: 400px;
+  margin: 50px auto;
+  padding: 15px;
+}
+
+.color-show{
+  width: 100%;
+  height: 300px;
+  background: #aef;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+    <!-- 1. 导入 react 相关的包 -->
+    <script src="./js/react.development.js"></script>
+    <!-- react 操作 DOM 的扩展包 -->
+    <script src="./js/react-dom.development.js"></script>
+</head>
+<body>
+  <!-- 2. 创建容器元素  id="app"  -->
+    <div id = "root"></div>
+    <script>
+      // 3 创建React元素
+      let h1 = React.createElement('h1', {title: 'react 的初体验', test: '测试属性'}, '在什么样的花园里边挖呀挖!!');
+        // 4 渲染 渲染 会将 react 元素创建为一个真是 DOM 元素插入到容器中
+      console.log(h1);
+      ReactDOM.render(h1, document.querySelector('#root'));// document.getElementById('root');
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"
+      rel="stylesheet"
+    />
+    <style>
+      label {
+        font-weight: normal;
+      }
+      /* .panel-body .glyphicon-remove, .panel-body .glyphicon-edit{
+        visibility: hidden;
+      }
+      .panel-body:hover .glyphicon-remove, .panel-body:hover .glyphicon-edit{
+        visibility: visible;
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-lg-8 col-lg-offset-2">
+          <h2 style="display:flex; justify-content: space-between;">
+            <span>记账本 <a href="/account/create" class="btn btn-xs btn-primary">添加</a></span> 
+            <form action="/logout" method="post"><button class="btn btn-sm btn-danger">退出</button></form> 
+          </h2>
+          <hr />
+          <div class="accounts">
+            <% data.forEach(item => { %>
+            <div class="panel panel-<%= item.type=== 1 ? 'success' : 'danger' %>">
+              <div class="panel-heading"><%= moment(item.date).format('YYYY-MM-DD') %></div>
+              <div class="panel-body">
+                <div class="col-xs-6"><%= item.title %></div>
+                <div class="col-xs-2 text-center">
+                  <span class="label label-<%= item.type=== 1 ? 'success' : 'danger' %>"><%= item.type === 1 ? '收入' : '支出'  %></span>
+                </div>
+                <div class="col-xs-2 text-right"><%= item.money %> 元</div>
+                <div class="col-xs-2 text-right">
+                  <a href="/account/<%= item._id %>/edit">
+                    <span
+                      class="glyphicon glyphicon-edit"
+                      aria-hidden="true"
+                    ></span>
+                    </a>
+                  <a href="/account/<%= item._id %>/delete">
+                  <span
+                    class="glyphicon glyphicon-remove"
+                    aria-hidden="true"
+                  ></span>
+                  </a>
+                  
+                </div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

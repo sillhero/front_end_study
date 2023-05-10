@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<script>
+		let p = new Promise((resolve, reject) => {
+			// resolve('成功');
+			reject('失败');
+		});
+
+        // catch 用来指定promise实例对象失败的回调
+		p.catch(reason => {
+			console.log('失败的回调', reason);
+		})
+	</script>
+</body>
+</html>

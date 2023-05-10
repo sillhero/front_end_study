@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+	<button id="btn">点击抽奖</button>
+	<script>
+		function rand(m, n) {
+            return Math.floor(Math.random() * (n - m + 1) + m);
+		}
+        // 点击按钮, 2s 后显示是否中奖.  30% 概率中奖  『1-100』
+        // 中奖弹出   恭喜恭喜   显示中奖号码
+        // 未中奖弹出  再接再厉   显示数字
+		// 获取按钮
+		let btn = document.querySelector('button');
+        // 原生写法
+		btn.onclick = function(){
+            // 定时器
+			setTimeout(() => {
+                // 判断用户是否中奖
+				let num = rand(1, 100);
+                // 判断数字
+				if (num <= 30) {
+                    alert('恭喜恭喜, 中奖号码为: ' + num);
+				}else {
+                    alert('再接再厉, 未中奖, 您的号码为: ' + num);
+				}
+
+            }, 2000)
+		}
+
+        // Promise 形式
+		btn.onclick = function () {
+            let p = new Promise((resolve, reject) => {
+                setTimeout(() => {
+					// 判断用户是否中奖
+					let num = rand(1, 100);
+					// 判断数字
+					if (num <= 30) {
+						resolve(num);
+					} else {
+						reject(num);
+					}
+				}, 2000)
+			});
+            p.then(vale => {
+                console.log('恭喜恭喜, 中奖号码为: ' + vale);
+            }, reason => {
+                console.log('再接再厉, 未中奖, 您的号码为: ' + reason);
+            });
+		}
+
+
+	</script>
+</body>
+</html>

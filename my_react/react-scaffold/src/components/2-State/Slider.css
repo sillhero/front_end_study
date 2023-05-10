@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: radial-gradient(#fff, #000);
+}
+
+/* 轮播图的视窗 */
+.slider-wrapper{
+    width: 480px;
+    height: 270px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+}
+
+.slider-wrapper .btn{
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.slider-wrapper .next {
+    right: 0;
+}

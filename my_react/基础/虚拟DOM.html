@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+<script>
+        // 1. 导入 react 相关的包
+        // 2. 创建容器元素  id="app"
+        // 3 创建React元素
+        // 4 渲染 渲染 会将 react 元素创建为一个真是 DOM 元素插入到容器中
+
+        // 虚拟DOM 又称为虚拟DOM对象，也称之为react元素
+        let vnode = React.createElement('h1', {test: '测试属性', test2: '测试属性'}, '当时明月在，曾照彩云归');
+        console.log(vnode);
+
+        // 原因：为了高效运行
+        // let root = doucment.getElementById('root');
+        // console.log(root)
+
+        // 尝试将虚拟DOM对象渲染到页面中
+        // 创建真实的DOM对象
+        let h1 = document.createElement(vnode.type);
+        // 设置标签属性 遍历 props 属性
+        for(let key in vnode.props) {
+          // 判断是否为children
+          if(key !== 'children') {
+            // 设置属性
+            h1.setAttribute(key, vnode.props[key]);
+          }else {
+            // 设置标签的文本
+            h1.innerHTML = vnode.props[key];
+          }
+        }
+        document.querySelector('#root').append(h1);
+</script>
+</body>
+</html>

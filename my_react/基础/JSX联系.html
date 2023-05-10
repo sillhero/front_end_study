@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+  <script src="./js/react.development.js"></script>
+  <script src="./js/react-dom.development.js"></script>
+  <script src="./js/babel.min.js"></script>
+  <style>
+    .container {
+      width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    // 数据
+    let data = {
+      title: '中纪委网站深度关注',
+      content: '累计清理负面有害信息15万余条，处置违规账号4000余个，关闭问题群组1300余个，解散不良话题814个，拦截下架涉嫌集资引流的小程序39款，专项排查整治网络综艺节目……日前，中央网信办、国家广播电视总局等相关主管部门整治不良粉丝文化工作的阶段性成效公布，引发社会广泛关注',
+      image: 'https://img2.utuku.imgcdc.com/650x0/ent/20210829/2f23657a-bee9-4009-a2e1-ef092d831870.png'
+    };
+
+    // 创建虚拟DOM对象 let h1 = React.createElement('h1', null, data.title)
+    let vdom = <div className="container">
+      <h1 style={{color: 'red', fontSize: '20px'}}>{data.title}</h1>
+      <p>{data.content}</p>
+      <img src={data.image} alt=""/>
+    </div>
+
+    ReactDOM.render(vdom, document.querySelector('#root'));
+  </script>
+</body>
+</html>

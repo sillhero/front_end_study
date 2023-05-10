@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+    let p = new Promise((resolve, reject) => {
+        // resolve('成功');
+        reject('失败');
+    });
+
+    // 指定 promise 实例对象成功与失败的回调
+    p.then(value => {
+        console.log('成功的回调', value);
+    }, reason => {
+        console.log('失败的回调', reason);
+    })
+</script>
+</body>
+</html>

@@ -78,61 +78,57 @@ function Promise(executor) {
     }
 }
 
-Promise.prototype.then = function (successCallback, failCallback) {
-    return new Promise((resolve, reject) => { // 这里的new Promise就是 根据原生的Promise.then方法返回promise对象的特性来实现的 自定义then返回的promise对象
-
-    // 判断实例对象的状态
+Promise.prototype.then = function (onFulfilled, onRejected) {
+    return new Promise((resolve, reject) => { // 这里的promise就是调用上面声明的构造函数
+        // 判断实例对象的状态是否为成功
         if (this.PromiseState === 'fulfilled') {
-            // 调用回调函数获得返回值
             try{
-                let res = successCallback(this.PromiseResult);
-                // 如果不是promise 成功
-                if (res instanceof Promise) { 
-                    // 如果是promise 那么根据promise的结果来决定then的返回值
-                    res.then(v => {
-                        resolve(v); // 在这里返回的res调用的是成功
-                    }, r => {
-                        reject(r);
-                    });
-                } else {
-                    resolve(res);
-                }
-                // 是promise 根据promise决定then的返回值
-                // 抛出结果 
-            } catch(error) {
-                reject(error);
-            }
-            
-        } else if (this.PromiseState === 'rejected') {
-            // 这个时候和上面的逻辑处理相似， 只是要是前面调用是在失败函数里面抛错的话，那么就会走到这里
-            // 前面的调用对象就是reject
-            try{
-                let res = failCallback(this.PromiseResult); // 这里的this.PromiseResult就是前面调用的reject的参数 有可能是是一个promise对象
-                if (res instanceof Promise) {
+                // 调用回调函数， 获得返回值
+                let res = onFulfilled(this.PromiseResult);
+                if (res instanceof Promise){ // 也就是说 他在创建promise的时候 成功的回调是一个新的promise类型
+                    // 如果是一个promise实例对象 根据promise决定then的返回值
                     res.then(v => {
                         resolve(v);
-                    }, r => {
+                    }, reason => {
+                        reject(reason);
+                    })
+                } else {
+                    resolve(res); // 不是promise对象就走正常的路径
+                }
+            } catch (e) {
+                reject(e);
+            }
+        }
+        if (this.PromiseState === 'rejected') {
+            try {
+                // 调用回调函数，获得返回值
+                let res = onRejected(this.PromiseResult);
+                if (res instanceof Promise) { // 这里的逻辑同上
+                    res.then(v => {
+                        resolve(v);
+                    },r => {
                         reject(r);
                     });
-                } else { // 不是promise对象 就直接返回成功类型
-                    resolve(res);
+                }else {
+                    reject(res);
                 }
-            } catch(error) {
+            }catch (e){
+                reject(e);
             }
-            failCallback(this.PromiseResult);
-        } else {
-            // 等待状态
-            // 将成功回调函数和失败回调函数存储起来
+        }
+        // 状态为pending说明这里遇到了异步操作
+        if (this.PromiseState === 'pending') {
             this.callbacks.push({
-                // ok: successCallback,
-                // ng: failCallback
                 ok: function (value) {
-                    successCallback(value);
+                    onFulfilled(value);
                 },
                 ng: function (reason) {
-                    failCallback(reason);
+                    onRejected(reason);
                 }
-            });
+            })
         }
-    });
+    })
 }
+
+
+// 步骤：

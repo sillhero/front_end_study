@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+    <!--导入react相关的包-->
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    // 创建react元素
+    let div = React.createElement('div',
+            {title: '插队有理?'},
+            // 子元素
+            React.createElement('h1', null, '近日浙江发生了一起骇人听闻的插队事件!'),
+            React.createElement('p',
+                    null,
+                    '一男子在排队时, 有一对母女强行插队, 恶言相告, 你凭什么拉我? 我不是那么好惹的!!',
+                    React.createElement('a', {href: 'http://www.baidu.com/s?wd=插队母女'}, '点击查看更多')
+            )
+    )
+    ReactDOM.render(div, document.getElementById('root'));
+  </script>
+</body>
+</html>

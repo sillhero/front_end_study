@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+  /**
+   * 函数名：sendAJAX
+   * 作用：发送AJAX请求
+   * 参数：method 请求类型， url 请求地址， data 请求数据
+   * 示例：sendAJAX('GET', 'http://localhost:8080/api')
+   * 返回值： promise 对象
+   *      成功的结果 【响应体】
+   *      失败的结果 【错误信息】
+   */
+  function sendAJAX(method, url) {
+    return new Promise((resolve, reject) => {
+      // AJAX 请求
+      let xhr = new XMLHttpRequest();
+      xhr.responseType = 'json';
+      // 初始化
+      xhr.open(method, url);
+      // 发送
+      xhr.send();
+      // 绑定事件
+      xhr.onload = function() {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          resolve(xhr.response);
+        }else {
+          reject(xhr.status);
+        }
+      }
+    });
+  }
+
+  sendAJAX('get', 'https://api.xiohigh.com/duanz').then(
+          body => {
+            console.log(body);
+          },
+          status => {
+            console.log(status); // 红色的输出
+          });
+</script>
+</body>
+</html>

@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/AJAX/cd230202-ajax" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ReactPromject/cd230202-react-basic" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/promise_professor/cd230202-promise" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../前端学习/cd230202-promise" vcs="Git" />
   </component>

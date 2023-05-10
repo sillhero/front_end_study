@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+    let p5 =  Promise.resolve(Promise.resolve(Promise.reject('失败')));
+    let p6 = Promise.reject(Promise.resolve('成功'));
+    console.log(p5);
+    console.log(p6)
+</script>
+</body>
+</html>
