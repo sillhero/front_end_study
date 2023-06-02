@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hero-container{
+    width: 1000px;
+    margin: 50px auto;
+}
+hr{
+    margin: 10px 0;
+}
+
+.hero-container .search{
+    text-align: right;
+}
+
+.hero-container .hero-list{
+    margin: 0 -10px;
+}
+
+.hero-container .hero-item{
+    width: 10%;
+    padding: 0 10px;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.hero-container p{
+    text-align: center;
+    font-size: 14px;
+}

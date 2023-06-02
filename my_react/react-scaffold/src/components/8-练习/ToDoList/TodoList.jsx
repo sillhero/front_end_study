@@ -3,7 +3,6 @@ import './index.css'
 import TodoHeader from './TodoHeader/TodoHeader'
 import TodoMain from './TodoMain/TodoMain'
 import TodoFooter from "./TodoFooter/TodoFooter";
-import axios from "axios";
 import localAction from "../until/myAxios";
 import Swal from "sweetalert2";
 export default function TodoList() {
@@ -40,7 +39,7 @@ export default function TodoList() {
 		// axios
 		async function fetchData() {
 			try {
-				let result = await axios.get('http://localhost:3001/todo');
+				let result = await localAction('/todo');
 				setTodos(result.data);
 			} catch (e) {
 				console.log(e);

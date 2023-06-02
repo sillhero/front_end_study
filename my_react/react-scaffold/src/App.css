@@ -1,0 +1,36 @@
+.active{
+    color: rgb(33, 47, 122);
+}
+
+*{
+    list-style: none;
+}
+.music-container{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.top-menu{
+    overflow: hidden;
+}
+.top-menu li{
+    float: left;
+    padding: 40px 20px;
+    font-size: 20px;
+}
+.menu{
+    overflow: hidden;
+}
+.menu li{
+    float: left;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.banner{
+    background: rgb(2, 30, 37);
+    padding: 80px;
+    color: white;
+    text-align: center;
+}
+

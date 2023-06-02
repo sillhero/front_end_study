@@ -1,0 +1,18 @@
+#root {
+  width: 100%;
+  min-width: 1200px;
+  height: 100%;
+}
+
+/* 定义全局的类 */
+.h-20{
+  height: 20px;
+}
+
+.h-10{
+  height: 10px;
+}
+
+.h-50{
+  height: 50px;
+}
